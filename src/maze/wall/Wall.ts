@@ -1,4 +1,4 @@
-import MapSite from './MapSite'
+import MapSite from '../MapSite'
 
 export default class Wall extends MapSite {
   enter () {}

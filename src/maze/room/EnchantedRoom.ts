@@ -1,5 +1,5 @@
 import Room from './Room'
-import Spell from './Spell'
+import Spell from '../item/Spell'
 
 export default class EnchantedRoom extends Room {
   protected spell: Spell | null

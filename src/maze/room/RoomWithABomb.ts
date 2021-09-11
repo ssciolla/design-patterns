@@ -1,5 +1,5 @@
-import Bomb from './Bomb'
 import Room from './Room'
+import Bomb from '../item/Bomb'
 
 export default class RoomWithABomb extends Room {
   bomb: Bomb

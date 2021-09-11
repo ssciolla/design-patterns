@@ -1,4 +1,3 @@
-
 export default abstract class MapSite {
   abstract enter (): void
 

@@ -1,5 +1,5 @@
-import MapSite from './MapSite'
-import Room from './Room'
+import MapSite from '../MapSite'
+import Room from '../room/Room'
 
 export default class Door extends MapSite {
   protected room1: Room

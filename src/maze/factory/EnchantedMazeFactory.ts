@@ -1,8 +1,7 @@
-import DoorNeedingSpell from './DoorNeedingSpell'
-import EnchantedRoom from './EnchantedRoom'
-import MazeFactory from './MazeFactory'
-import Room from './Room'
-import Spell from './Spell'
+import DoorNeedingSpell from '../door/DoorNeedingSpell'
+import MazeFactory from '../factory/MazeFactory'
+import Spell from '../item/Spell'
+import EnchantedRoom from '../room/EnchantedRoom'
 
 export default class EnchantedMazeFactory extends MazeFactory {
   protected castSpell () {
@@ -13,7 +12,7 @@ export default class EnchantedMazeFactory extends MazeFactory {
     return new EnchantedRoom(num, this.castSpell())
   }
 
-  makeDoor (r1: Room, r2: Room) {
+  makeDoor (r1: EnchantedRoom, r2: EnchantedRoom) {
     return new DoorNeedingSpell(r1, r2, false)
   }
 }

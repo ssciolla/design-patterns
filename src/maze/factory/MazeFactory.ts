@@ -1,7 +1,7 @@
-import Door from './Door'
-import Maze from './Maze'
-import Room from './Room'
-import Wall from './Wall'
+import Maze from '../Maze'
+import Door from '../door/Door'
+import Room from '../room/Room'
+import Wall from '../wall/Wall'
 
 export default class MazeFactory {
   

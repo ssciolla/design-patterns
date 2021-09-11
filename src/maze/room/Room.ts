@@ -1,7 +1,7 @@
-import { Direction } from './vocab'
-import MapSite from './MapSite'
-import Wall from './Wall'
-import Door from './Door'
+import MapSite from '../MapSite'
+import Door from '../door/Door'
+import Wall from '../wall/Wall'
+import { Direction } from '../vocab'
 
 type RoomSide = Wall | Door | undefined
 type RoomSides = [RoomSide, RoomSide, RoomSide, RoomSide]

@@ -1,7 +1,7 @@
-import BombedMazeFactory from './BombedMazeFactory'
-import EnchantedMazeFactory from './EnchantedMazeFactory'
-import MazeFactory from './MazeFactory'
 import { MazeGame } from './MazeGame'
+import BombedMazeFactory from './factory/BombedMazeFactory'
+import EnchantedMazeFactory from './factory/EnchantedMazeFactory'
+import MazeFactory from './factory/MazeFactory'
 
 const aMazeGame = new MazeGame()
 const aMaze = aMazeGame.createMaze()

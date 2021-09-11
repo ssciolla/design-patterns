@@ -1,7 +1,7 @@
-import Bomb from './Bomb'
-import BombedWall from './BombedWall'
-import MazeFactory from './MazeFactory'
-import RoomWithABomb from './RoomWithABomb'
+import MazeFactory from '../factory/MazeFactory'
+import Bomb from '../item/Bomb'
+import RoomWithABomb from '../room/RoomWithABomb'
+import BombedWall from '../wall/BombedWall'
 
 export default class BombedMazeFactory extends MazeFactory {
   protected plantBomb () {

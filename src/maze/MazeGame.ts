@@ -1,9 +1,9 @@
-import Door from './Door'
 import Maze from './Maze'
-import MazeFactory from './MazeFactory'
-import Room from './Room'
 import { Direction } from './vocab'
-import Wall from './Wall'
+import Door from './door/Door'
+import MazeFactory from './factory/MazeFactory'
+import Room from './room/Room'
+import Wall from './wall/Wall'
 
 export class MazeGame {
   public constructor () {}

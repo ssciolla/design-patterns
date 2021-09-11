@@ -1,7 +1,9 @@
 import Door from './Door'
 import Maze from './Maze'
+import MazeFactory from './MazeFactory'
 import Room from './Room'
 import { Direction } from './vocab'
+import Wall from './Wall'
 
 export class MazeGame {
   public constructor () {}
@@ -17,7 +19,37 @@ export class MazeGame {
 
     // Connect the two rooms via a door
     const theDoor = new Door(r1, r2)
+
+    r1.setSide(Direction.North, new Wall())
+    r1.setSide(Direction.South, new Wall())
     r1.setSide(Direction.East, theDoor)
+    r1.setSide(Direction.West, new Wall())
+
+    r2.setSide(Direction.North, new Wall())
+    r2.setSide(Direction.South, new Wall())
+    r2.setSide(Direction.East, new Wall())
+    r2.setSide(Direction.West, theDoor)
+
+    return aMaze
+  }
+
+  createMazeWithFactory (factory: MazeFactory) {
+    const aMaze = factory.makeMaze()
+    const r1 = factory.makeRoom(1)
+    const r2 = factory.makeRoom(2)
+    aMaze.addRoom(r1)
+    aMaze.addRoom(r2)
+
+    const theDoor = factory.makeDoor(r1, r2)
+
+    r1.setSide(Direction.North, factory.makeWall())
+    r1.setSide(Direction.South, factory.makeWall())
+    r1.setSide(Direction.East, theDoor)
+    r1.setSide(Direction.West, factory.makeWall())
+
+    r2.setSide(Direction.North, factory.makeWall())
+    r2.setSide(Direction.South, factory.makeWall())
+    r2.setSide(Direction.East, factory.makeWall())
     r2.setSide(Direction.West, theDoor)
 
     return aMaze

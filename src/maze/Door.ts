@@ -2,15 +2,15 @@ import MapSite from './MapSite'
 import Room from './Room'
 
 export default class Door extends MapSite {
-  private room1: Room
-  private room2: Room
-  private isOpen: boolean
+  protected room1: Room
+  protected room2: Room
+  protected isOpen: boolean
 
-  public constructor (room1: Room, room2: Room) {
+  constructor (room1: Room, room2: Room, isOpen?: boolean) {
     super()
     this.room1 = room1
     this.room2 = room2
-    this.isOpen = Math.random() < 0.5
+    this.isOpen = isOpen !== undefined ? isOpen : Math.random() < 0.5
   }
 
   getOtherSide (room: Room): Room | undefined {
@@ -23,6 +23,6 @@ export default class Door extends MapSite {
   enter () {}
 
   toString(): string {
-    return `Door<isOpen=${this.isOpen}>`
+    return `${this.constructor.name}<isOpen=${this.isOpen}>`
   }
 }

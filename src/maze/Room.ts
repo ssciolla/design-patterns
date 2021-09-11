@@ -1,8 +1,10 @@
 import { Direction } from './vocab'
 import MapSite from './MapSite'
 import Wall from './Wall'
+import Door from './Door'
 
-type RoomSides = [MapSite, MapSite, MapSite, MapSite]
+type RoomSide = Wall | Door | undefined
+type RoomSides = [RoomSide, RoomSide, RoomSide, RoomSide]
 
 export default class Room extends MapSite {
   private roomNumber: number
@@ -10,7 +12,7 @@ export default class Room extends MapSite {
 
   public constructor (
     roomNumber: number,
-    sides: RoomSides = [new Wall(), new Wall(), new Wall(), new Wall()]
+    sides: RoomSides = [undefined, undefined, undefined, undefined]
   ) {
     super()
     this.roomNumber = roomNumber
@@ -23,17 +25,17 @@ export default class Room extends MapSite {
     return this.roomNumber
   }
 
-  getSide (dir: Direction): MapSite {
+  getSide (dir: Direction): RoomSide {
     return this.sides[dir]
   }
 
-  setSide (dir: Direction, site: MapSite) {
-    this.sides[dir] = site
+  setSide (dir: Direction, side: RoomSide) {
+    this.sides[dir] = side
   }
 
   toString (): string {
     return (
-      `Room<` +
+      `${this.constructor.name}<` +
       `number=${this.roomNumber}; ` +
       `sides=[` +
       this.sides.map((s, i) => `${Direction[i]}<${s}>`).join(', ') +

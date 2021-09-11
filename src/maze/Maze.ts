@@ -23,6 +23,6 @@ export default class Maze {
   }
   
   toString (): string {
-    return `Maze<rooms=[${this.rooms.map(r => r.toString()).join(', ')}]>`
+    return `${this.constructor.name}<rooms=[${this.rooms.map(r => r.toString()).join(', ')}]>`
   }
 }

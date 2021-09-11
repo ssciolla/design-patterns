@@ -13,14 +13,14 @@ export default class Door extends MapSite {
     this.isOpen = Math.random() < 0.5
   }
 
-  getOtherSide(room: Room): Room | undefined {
+  getOtherSide (room: Room): Room | undefined {
     const roomNum = room.getRoomNumber()
     if (roomNum === this.room1.getRoomNumber()) return this.room2
     if (roomNum === this.room2.getRoomNumber()) return this.room1
     return undefined
   }
 
-  enter() {}
+  enter () {}
 
   toString(): string {
     return `Door<isOpen=${this.isOpen}>`

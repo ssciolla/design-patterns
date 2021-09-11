@@ -2,7 +2,7 @@
 export default abstract class MapSite {
   abstract enter (): void
 
-  toString(): string {
+  toString (): string {
     return this.constructor.name
   }
 }

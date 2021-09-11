@@ -4,7 +4,7 @@ import Room from './Room'
 import { Direction } from './vocab'
 
 export class MazeGame {
-  public constructor() {}
+  public constructor () {}
 
   createMaze (): Maze {
     const aMaze = new Maze()

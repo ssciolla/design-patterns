@@ -17,9 +17,9 @@ export default class Room extends MapSite {
     this.sides = sides
   }
 
-  enter() {}
+  enter () {}
 
-  getRoomNumber(): number {
+  getRoomNumber (): number {
     return this.roomNumber
   }
 
@@ -31,7 +31,7 @@ export default class Room extends MapSite {
     this.sides[dir] = site
   }
 
-  toString(): string {
+  toString (): string {
     return (
       `Room<` +
       `number=${this.roomNumber}; ` +

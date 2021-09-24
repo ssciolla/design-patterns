@@ -2,6 +2,7 @@ import { MazeGame } from './MazeGame'
 import BombedMazeFactory from './factory/BombedMazeFactory'
 import EnchantedMazeFactory from './factory/EnchantedMazeFactory'
 import MazeFactory from './factory/MazeFactory'
+import EnchantedRoom from './room/EnchantedRoom'
 
 const aMazeGame = new MazeGame()
 const aMaze = aMazeGame.createMaze()
@@ -22,6 +23,8 @@ const enchantedMaze = aMazeGame.createMazeWithFactory(enchantedMazeFactory)
 
 console.log(`${enchantedMaze}`)
 console.log(`${enchantedMaze.getRoom(2)}`)
+const room = enchantedMaze.getRoom(2) as EnchantedRoom
+console.log(room.getSpell())
 console.log(`- - -\n`)
 
 const bombedMazeFactory = new BombedMazeFactory()
